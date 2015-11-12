@@ -7,11 +7,11 @@ var BaseView = Backbone.View.extend({
     _.extend(this,data);
 
     if(!this.template && (this.template=document.getElementById(this.id))){
-      this.template=_.template(document.getElementById(this.id).text);
+      this.template=document.getElementById(this.id);
     }
   },
   render:function(payload){
-    this.el=this.template(payload);
+    this.el=this.template.innerHTML;
     return this;
   }
 });
